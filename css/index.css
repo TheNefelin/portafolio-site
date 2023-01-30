@@ -54,12 +54,10 @@ a:hover {
     background-size: cover;
 }
 
-.seccion > h1 {
+.titulo-h1 {
     padding: 1vw 0 1vw 10vw;
     margin: 0;
-}
 
-.titulo {
     color: var(--colorTextTitulo);
     text-shadow: 
         1px 0 var(--colorTextTituloBorde), 
@@ -74,7 +72,7 @@ a:hover {
 
 @media (max-width: 481px) {
     body {
-        font-size: 10px;
+        font-size: 12px;
     }
 }
 /* -- NavBar ------------------------------------------------------------------------------------ */
@@ -125,7 +123,7 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100% , 15rem), 1fr));
     gap: 2vw;
-    margin: 4rem;
+    margin: 2rem 2rem 2rem 2rem;
 }
 
 .tarjeta-st {
@@ -144,6 +142,10 @@ a:hover {
     height: 2rem;
 }
 
+.tarjeta-st p {
+    margin: 1vw;
+}
+
 .tarjeta-st img {
     max-width: 100%;
     background-color: white;
@@ -160,6 +162,23 @@ a:hover {
 /* -- Seccion-Proyectos ------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------- */
 
+.tarjeta-sp {
+    margin: 2vw;
+    display: grid;
+}
+
+.tarjeta-sp img {
+    max-height: 200px;
+    background-color: var(--colorSecundario);
+    border-radius: 50%;
+}
+
+.tarjeta-sp-grup {
+    height: 200px;
+    width: 200px;;
+    border: 1px solid var(--colorFooter);
+}
+
 /* -- Seccion-Hobbie ---------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------- */
 .seccion-hobbie {
@@ -172,7 +191,6 @@ footer {
     background-color: var(--colorFooter);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100% , 15rem), 1fr));
-    /* gap: 0 6.25rem; */
 }
 
 footer div {

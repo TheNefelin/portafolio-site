@@ -15,7 +15,7 @@ const dataTecnologias = [
         id: 3,
         nombre: "VS Code",
         link: "./img/tec_vscode.png",
-        descripcion: "Experiencia desde 2022 con React, JQuery, HTML5, CSS3, JS y JQuery",
+        descripcion: "Experiencia desde 2022 con React, HTML5, CSS3, JS y JQuery",
     }
     ,{
         id: 4,

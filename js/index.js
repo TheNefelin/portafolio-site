@@ -1,11 +1,13 @@
 // -- Inicializar Sitio ------------------------------------------------------------
 // ---------------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Sitio iniciado");
-    cargarTecnologias();
+    console.log("iniciando sitio...");
+    // cargarTecnologias();
+    console.log("Sitio inicialisado...");
 });
 
-
+// -- Cargar Componentes -----------------------------------------------------------
+// ---------------------------------------------------------------------------------
 function cargarTecnologias() {
     let html = ""
     dataTecnologias.map(d => {
@@ -19,3 +21,5 @@ function cargarTecnologias() {
 
     document.querySelector(".contenedor-st").innerHTML = html;
 }
+
+
