@@ -1,0 +1,196 @@
+
+/* -- Fuentes ----------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------- */
+@font-face {
+    font-family: fuenteCursiva;
+    src: url("../font/Caveat-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: fuenteGeneral;
+    src: url("../font/DMSerifDisplay-Regular.ttf");
+}
+
+@font-face {
+    font-family: fuenteLogo;
+    src: url("../font/PermanentMarker-Regular.ttf");
+}
+
+/* -- Configuraciones Generales ----------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------- */
+:root {
+    --colorPrimario: black;
+    --colorPrimarioCaja: rgba(0, 0, 0, 0.7);
+    --colorSecundario: rgb(255, 102, 102);
+    --colorText: white;
+    --colorText2: aqua;
+    --colorTextTitulo: rgb(70, 53, 53);    
+    --colorTextTituloBorde: rgb(255, 255, 255);    
+    --colorFooter:  rgb(102, 102, 102);
+}
+
+body {
+    font-family: fuenteGeneral;
+    font-size: 16px;
+    color: var(--colorText);
+    background-color: var(--colorPrimario);
+}
+
+a {
+    color: var(--colorText);
+    text-decoration: none;
+    margin: 0.13rem;
+}
+
+a:hover {
+    color: var(--colorSecundario);
+}
+
+.seccion {
+    background-color: var(--colorPrimario);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.seccion > h1 {
+    padding: 1vw 0 1vw 10vw;
+    margin: 0;
+}
+
+.titulo {
+    color: var(--colorTextTitulo);
+    text-shadow: 
+        1px 0 var(--colorTextTituloBorde), 
+        -1px 0 var(--colorTextTituloBorde), 
+        0 1px var(--colorTextTituloBorde), 
+        0 -1px var(--colorTextTituloBorde), 
+        1px 1px var(--colorTextTituloBorde),  
+        -1px -1px var(--colorTextTituloBorde), 
+        1px -1px var(--colorTextTituloBorde), 
+        -1px 1px var(--colorTextTituloBorde);
+}
+
+@media (max-width: 481px) {
+    body {
+        font-size: 10px;
+    }
+}
+/* -- NavBar ------------------------------------------------------------------------------------ */
+/* ---------------------------------------------------------------------------------------------- */
+.p-nav {
+    background-color: var(--colorPrimario);
+    width: 100vw;
+    position: fixed;
+    justify-content: space-between;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.p-nav > * {
+    display: flex;
+}
+
+.p-nav img {
+    height: 4rem;
+}
+
+/* -- Seccion-Principal ------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------- */
+.seccion-principal {
+    height: 100vh;
+    background-image: url("../img/3357684.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-sp {
+    padding: 0 1rem;
+    text-align: center;
+    border: 1px solid var(--colorFooter);
+    background-color: var(--colorPrimarioCaja);
+    backdrop-filter: blur(5px);
+}
+
+.contenedor-sp p {
+    color: var(--colorText2);
+}
+
+/* -- Seccion Tecnologías ----------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------- */
+.contenedor-st {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100% , 15rem), 1fr));
+    gap: 2vw;
+    margin: 4rem;
+}
+
+.tarjeta-st {
+    border: 1px solid var(--colorFooter);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta-st h1 {
+    background-color: var(--colorFooter);
+    color: var(--colorText2);
+    margin: 0;
+    padding: 1vw;
+    height: 2rem;
+}
+
+.tarjeta-st img {
+    max-width: 100%;
+    background-color: white;
+    object-fit: cover;
+}
+
+/* -- Seccion-Relleno --------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------- */
+.seccion-relleno {
+    height: 100px;
+    background-image: url("../img/fondo_01.jpg");
+}
+
+/* -- Seccion-Proyectos ------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------- */
+
+/* -- Seccion-Hobbie ---------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------- */
+.seccion-hobbie {
+    background-image: url("../img/guitarra01.jpg");
+}
+
+/* -- Footer ------------------------------------------------------------------------------------ */
+/* ---------------------------------------------------------------------------------------------- */
+footer {
+    background-color: var(--colorFooter);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100% , 15rem), 1fr));
+    /* gap: 0 6.25rem; */
+}
+
+footer div {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1.2rem;
+    color: var(--colorText2);
+}
+
+.p-derechos {
+    padding: 0.6rem;
+    text-align: center;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------- */
