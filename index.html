@@ -21,10 +21,10 @@
         <nav class="p-nav contenedor-oscuro">
             <div>
                 <img src="./img/logo.png">
-                <h1>Portafolio</h1>
+                <h1 class="wow animated lightSpeedIn">Portafolio</h1>
             </div>
             
-            <div>
+            <div class="wow animated fadeIn">
                 <a href="#" onclick="cargarTecnologias()">Link 1</a>
                 <a href="#">Link 2</a>
                 <a href="#">Link 3</a>
@@ -35,7 +35,7 @@
     
     <main>
         <section class="seccion-principal seccion">
-            <div class="contenedor-sp">
+            <div class="contenedor-sp wow animated fadeInDownBig">
                 <h1>Francisco Carmona</h1>
                 <h2>Software Developer</h2>
                 <p>.NET Core, SQL Server, C#, WebApi, HTML5, CSS3, JS</p>
@@ -43,7 +43,7 @@
         </section>
 
         <section class="seccion-tecnologia seccion">
-            <h1 class="titulo-h1">Tecnologías</h1>
+            <h1 class="titulo-h1 wow animated bounceInRight">Tecnologías</h1>
             
             <div class="contenedor-st">
                 <!-- Los elementos se cargan de forma dinamica desde la funcion cargarTecnologias() -->
@@ -53,18 +53,16 @@
         <div class="seccion-relleno seccion"></div>
 
         <section class="seccion-proyectos seccion">
-            <h1 class="titulo-h1">Proyectos</h1>
+            <h1 class="titulo-h1 wow animated bounceInLeft">Proyectos</h1>
             
             <div class="tarjeta-sp">
                 <img src="./img/script.svg" alt="">
-                <div class="tarjeta-sp-grup">
 
-                </div>
             </div>
         </section>
 
         <section class="seccion-hobbie seccion">
-            <h1 class="titulo-h1">Hobbies</h1>
+            <h1 class="titulo-h1 wow animated wobble">Hobbies</h1>
             
             <span class="tarjeta-h">
                 asd
@@ -73,32 +71,25 @@
     </main>
 
     <footer>
-        <div>
-            <p>Links para Imagenes</p>
-            <a href="https://pixabay.com/" target="_blank">PixaBay</a>
-            <a href="https://www.freepik.com/" target="_blank">FreePik</a>
-            <a href="https://unsplash.com/" target="_blank">UnSplash</a>
-        </div>
-        <div>
-            <p>Links para Hosting</p>
-            <a href="https://freeasphosting.net/" target="_blank">FreeAspHosting</a>
-            <a href="https://www.infinityfree.net/" target="_blank">Infinityfree</a>
-            <a href="https://dev.azure.com/" target="_blank">Azure DevObs</a>
-        </div>
-        <div>
-            <p>Links para Aprender</p>
-            <a href="https://www.w3schools.com/" target="_blank">w3schools</a>
-            <a href="https://scrimba.com/" target="_blank">Scrimba</a>
-            <a href="https://animate.style/" target="_blank">Animate CSS</a>
-            <a href="https://www.youtube.com/@CodelyTV" target="_blank">CodelyTV</a>
-        </div>
-        <div>
-            <p>Links Creditos</p>
-            <a href="http://www.freepik.com">Designed by Freepik</a>
-        </div>
+        <!-- los elementos se cargan de forma dinamica desde la funcion cargarLinks() -->
     </footer>
     
-    <div class="p-derechos wow animated rollIn">© 2023 | @nefelin</div> 
+    <div class="p-derechos">© 2023 | @nefelin</div>
+
+    <!-- 
+        bounce flash pulse shake swing tada wobble
+        bounceIn bounceInDown bounceInLeft bounceInRight bounceInUp 
+        bounceOut bounceOutDown bounceOutLeft bounceOutRight bounceOutUp
+        fadeIn fadeInDown fadeInDownBig fadeInLeft fadeInLeftBig fadeInRight fadeInRightBig fadeInUp fadeInUpBig
+        fadeOut fadeOutDown fadeOutDownBig fadeOutLeft fadeOutLeftBig fadeOutRight fadeOutRightBig fadeOutUp fadeOutUpBig
+        animated.flip flipInX flipInY flipOutX flipOutY 
+        lightSpeedIn lightSpeedOut
+        rotateIn rotateInDownLeft rotateInDownRight rotateInUpLeft rotateInUpRight 
+        rotateOut rotateOutDownLeft rotateOutDownRight rotateOutUpLeft rotateOutUpRight
+        slideInDown slideInLeft slideInRight 
+        slideOutLeft slideOutRight slideOutUp
+        hinge rollIn rollOut
+    -->
 
     <script type="text/javascript" src="js/data.js"></script>
     <script type="text/javascript" src="js/index.js"></script>

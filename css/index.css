@@ -98,7 +98,7 @@ a:hover {
 /* -- Seccion-Principal ------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------- */
 .seccion-principal {
-    height: 100vh;
+    height: 110vh;
     background-image: url("../img/3357684.jpg");
     display: flex;
     justify-content: center;
@@ -163,20 +163,17 @@ a:hover {
 /* ---------------------------------------------------------------------------------------------- */
 
 .tarjeta-sp {
+    border: 1px solid var(--colorFooter);
     margin: 2vw;
-    display: grid;
+    display: flex;
+    position: relative;
+    border-radius: 100px 10px 10px 100px;
 }
 
 .tarjeta-sp img {
-    max-height: 200px;
+    max-height: 20vh;
     background-color: var(--colorSecundario);
     border-radius: 50%;
-}
-
-.tarjeta-sp-grup {
-    height: 200px;
-    width: 200px;;
-    border: 1px solid var(--colorFooter);
 }
 
 /* -- Seccion-Hobbie ---------------------------------------------------------------------------- */
