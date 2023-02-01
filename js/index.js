@@ -2,12 +2,41 @@
 // ---------------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
     console.log("iniciando sitio...");
-    cargarTecnologias();
-    cargarLinks()
+    apiTest()
     console.log("Sitio inicialisado...");
 });
 
-// -- Cargar Componentes -----------------------------------------------------------
+iFrameResize({ log: true }, '#ifVideo');
+
+function apiTest() {
+    fetch("https://bsite.net/metalflap/mae_config")
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        apiCargarTecnologias();
+        cargarTecnologias();
+        cargarLinks()
+        console.log(data)
+    })
+    .catch((error) => {
+        cargarTecnologias();
+        cargarLinks()
+        console.error('Error:', error);
+    });
+}
+
+// -- Cargar Componentes Remotos ---------------------------------------------------
+// ---------------------------------------------------------------------------------
+function apiCargarTecnologias() {
+
+}
+
+function apiCargarLinks() {
+
+}
+
+// -- Cargar Componentes Locales ---------------------------------------------------
 // ---------------------------------------------------------------------------------
 function cargarTecnologias() {
     let html = ""
@@ -42,3 +71,7 @@ function cargarLinks() {
 
     document.querySelector("footer").innerHTML = html;
 }
+
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+

@@ -123,7 +123,7 @@ const dataLinks = [
     }
     ,{
         id: 13,
-        nombre: "Kartax",
+        nombre: "Kartax Demo",
         link: "https://kartax.netlify.app/",
         idGrupo: 4,
     }

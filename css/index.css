@@ -70,6 +70,11 @@ a:hover {
         -1px 1px var(--colorTextTituloBorde);
 }
 
+iframe {
+    width: 1px;
+    min-width: 100%;
+}
+
 @media (max-width: 481px) {
     body {
         font-size: 12px;
@@ -163,7 +168,7 @@ a:hover {
 /* ---------------------------------------------------------------------------------------------- */
 
 .tarjeta-sp {
-    border: 1px solid var(--colorFooter);
+    border: 2px solid var(--colorFooter);
     margin: 2vw;
     display: flex;
     position: relative;
