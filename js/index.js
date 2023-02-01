@@ -2,11 +2,10 @@
 // ---------------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
     console.log("iniciando sitio...");
-    apiTest()
-    console.log("Sitio inicialisado...");
+    apiTest();
 });
 
-iFrameResize({ log: true }, '#ifVideo');
+// iFrameResize({ log: true }, '#ifVideo');
 
 function apiTest() {
     fetch("https://bsite.net/metalflap/mae_config")
@@ -16,15 +15,15 @@ function apiTest() {
     .then((data) => {
         apiCargarTecnologias();
         cargarTecnologias();
-        cargarLinks()
-        console.log(data)
+        cargarLinks();
+        console.log(data);
     })
     .catch((error) => {
         cargarTecnologias();
-        cargarLinks()
+        cargarLinks();
         console.error('Error:', error);
     });
-}
+};
 
 // -- Cargar Componentes Remotos ---------------------------------------------------
 // ---------------------------------------------------------------------------------
