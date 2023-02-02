@@ -1,6 +1,9 @@
 // -- Inicializar Sitio ------------------------------------------------------------
 // ---------------------------------------------------------------------------------
-import { Links } from "./clases.js";
+import { LinksGroup, Links } from "../js/clases.js";
+
+let arrLinksGroup = [];
+let arrLinks = [];
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("iniciando sitio...");
@@ -16,19 +19,22 @@ function apiTest() {
     }) 
     .then((data) => {  // Si esto pasa, el contenido carga desde la API
         getTecnologias_api();
-        getLinksGrupo_api();
+        getLinksAndGrupo_api();
         console.log(`${data[0].Nombre} ${data[0].Apellido} Nice: ${data[0].Alias}`);
     })
+    .then(() => {
+        arrLinksGroup = dataLinkGrp;
+        arrLinks = dataLinks;
+    })
     .catch((error) => { // Si NO pasa, el contenido carga desde el arreglo Local
-        renderTecnologias(dataTecnologias);
-        cargarLinks();
+        renderTecnologias();
+        renderLinksAndGroup();
         console.error('Error:', error);
     });
 };
 
 // -- Cargar Componentes Remotos ---------------------------------------------------
 // ---------------------------------------------------------------------------------
-let arrLinks = [];
 
 function getTecnologias_api() {
     fetch("https://bsite.net/metalflap/tecnologias")
@@ -37,27 +43,14 @@ function getTecnologias_api() {
     .catch((err) => console.log(`Error: ${err}`));
 }
 
-function getLinksGrupo_api() {
+function getLinksAndGrupo_api() {
     fetch("https://bsite.net/metalflap/links-group")
-    .then((respuesta) => respuesta.json())
-    .then((data) => {
-        renderLinksGroup(data);
-    })
-    .then(() => {
-        getLinks_api();
-    })
-    .catch((err) => console.log(`Error: ${err}`));
-}
-
-function getLinks_api() {
-    fetch(`https://bsite.net/metalflap/links/`)
-    .then((respuesta) => respuesta.json())
-    .then((data) => {
-        arrLinks = new Links(data.id, data.nombre, data.link);
-    })
-    .then(() => {
-        console.log(arrLinks.getNombre());
-    })
+    .then((resp) => resp.json())
+    .then((data) => arrLinksGroup = data)
+    .then(() => fetch("https://bsite.net/metalflap/links"))
+    .then((resp) => resp.json())
+    .then((data) => arrLinks = data)
+    .then(() => renderLinksAndGroup())
     .catch((err) => console.log(`Error: ${err}`));
 }
 
@@ -78,35 +71,19 @@ function renderTecnologias(dt) {
     document.querySelector(".contenedor-st").innerHTML = html;
 }
 
-function renderLinksGroup(dt) {
+function renderLinksAndGroup() {
     let html = ""
 
-    dt.map((d) => {
-        html = html + "<div>"
-        html = html + `<p>${d.nombre}</p>`
+    arrLinksGroup.map((lg) => {
+        html += `<div><p>${lg.nombre}</p>`
 
-        console.log(arrLinks);
-
-        html = html + "</div>";
-    });
-
-    document.querySelector("footer").innerHTML = html;
-}
-
-function cargarLinks() {
-    let html = ""
-
-    dataLinkGrp.map((item_linkGrp) => {
-        html = html + "<div>";
-        html = html + `<p>${item_linkGrp.nombre}</p>`;
-
-        let links = dataLinks.filter(d => d.idGrupo == item_linkGrp.id);
-
-        links.map(items_links => {
-            html = html + `<a href="${items_links.link}" target="_blank">${items_links.nombre}</a>`;
+        arrLinks.map(l => {
+            if (l.IdLinkGrupo == lg.id) {
+                html += `<a href="${l.link}"">${l.nombre}</a>`;
+            }
         });
-
-        html = html + "</div>";
+        
+        html += "</div>";
     });
 
     document.querySelector("footer").innerHTML = html;
