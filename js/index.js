@@ -78,8 +78,8 @@ function renderLinksAndGroup() {
         html += `<div><p>${lg.nombre}</p>`
 
         arrLinks.map(l => {
-            if (l.IdLinkGrupo == lg.id) {
-                html += `<a href="${l.link}"">${l.nombre}</a>`;
+            if (l.idLinkGrupo == lg.id) {
+                html += `<a target="_blank" href="${l.link}">${l.nombre}</a>`;
             }
         });
         
