@@ -1,6 +1,6 @@
 // -- Inicializar Sitio ------------------------------------------------------------
 // ---------------------------------------------------------------------------------
-let estadoApi = false;
+import { Links } from "./clases.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("iniciando sitio...");
@@ -13,10 +13,10 @@ function apiTest() {
     fetch("https://bsite.net/metalflap/talento-digital")
     .then((response) => {
         return response.json();
-    })
+    }) 
     .then((data) => {  // Si esto pasa, el contenido carga desde la API
-        apiCargarTecnologias();
-        apiCargarLinksGrupo();
+        getTecnologias_api();
+        getLinksGrupo_api();
         console.log(`${data[0].Nombre} ${data[0].Apellido} Nice: ${data[0].Alias}`);
     })
     .catch((error) => { // Si NO pasa, el contenido carga desde el arreglo Local
@@ -28,27 +28,35 @@ function apiTest() {
 
 // -- Cargar Componentes Remotos ---------------------------------------------------
 // ---------------------------------------------------------------------------------
-function apiCargarTecnologias() {
+let arrLinks = [];
+
+function getTecnologias_api() {
     fetch("https://bsite.net/metalflap/tecnologias")
     .then((respuesta) => respuesta.json())
     .then((data) => renderTecnologias(data))
     .catch((err) => console.log(`Error: ${err}`));
 }
 
-function apiCargarLinksGrupo() {
+function getLinksGrupo_api() {
     fetch("https://bsite.net/metalflap/links-group")
     .then((respuesta) => respuesta.json())
     .then((data) => {
         renderLinksGroup(data);
     })
+    .then(() => {
+        getLinks_api();
+    })
     .catch((err) => console.log(`Error: ${err}`));
 }
 
-function apiCargarLinks(id) {
-    fetch(`https://bsite.net/metalflap/links/${id}`)
+function getLinks_api() {
+    fetch(`https://bsite.net/metalflap/links/`)
     .then((respuesta) => respuesta.json())
     .then((data) => {
-        return data;
+        arrLinks = new Links(data.id, data.nombre, data.link);
+    })
+    .then(() => {
+        console.log(arrLinks.getNombre());
     })
     .catch((err) => console.log(`Error: ${err}`));
 }
@@ -59,7 +67,7 @@ function renderTecnologias(dt) {
     let html = ""
 
     dt.map(d => {
-        html = html + `
+        html += `
         <div key=${d.id} class="tarjeta-st wow animated bounceInLeft">
             <img src="${d.link}" alt="">
             <p>${d.descripcion}</p>
@@ -77,8 +85,7 @@ function renderLinksGroup(dt) {
         html = html + "<div>"
         html = html + `<p>${d.nombre}</p>`
 
-        let prueba = apiCargarLinks(d.id);
-        console.log(prueba);
+        console.log(arrLinks);
 
         html = html + "</div>";
     });
