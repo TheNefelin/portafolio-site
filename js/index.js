@@ -27,7 +27,7 @@ function apiTest() {
         arrLinks = dataLinks;
     })
     .catch((error) => { // Si NO pasa, el contenido carga desde el arreglo Local
-        renderTecnologias();
+        renderTecnologias(dataTecnologias);
         renderLinksAndGroup();
         console.error('Error:', error);
     });
