@@ -17,22 +17,27 @@
     <title>Portafolio</title>
 </head>
 <body>
-    <header>
-        <nav class="p-nav contenedor-oscuro">
-            <div>
-                <img src="./img/logo.png">
+    <header id="header">
+        <nav id="navBar01" class="navBar01-contenedor">
+            <a class="navBar01-logo" href="#">
+                <img src="./img/logo.png" alt="">
                 <h1 class="wow animated lightSpeedIn">Portafolio</h1>
+            </a>
+            <div class="navBar01-btn" onclick="navBar01_click()">
+                <div class="navBar01-A"></div>
+                <div class="navBar01-B"></div>
+                <div class="navBar01-C"></div>
             </div>
-            
-            <div class="wow animated fadeIn">
+            <div class="navBar01-links wow animated fadeIn">
                 <a href="#seccion-tecnologia">Técnologias</a>
                 <a href="#seccion-proyectos">Proyectos</a>
                 <a href="#seccion-hobbie">Hobies</a>
                 <a href="#">Contacto</a>
             </div>
         </nav>
-        <section class="seccion-principal seccion">
-            <div class="contenedor-sp wow animated fadeInDownBig">
+
+        <section class="navBar01-seccion">
+            <div class="wow animated flipInY">
                 <h1>Francisco Carmona</h1>
                 <h2>Software Developer</h2>
                 <p>.NET Core, SQL Server, C#, WebApi, HTML5, CSS3, JS</p>
@@ -96,6 +101,6 @@
 
     <script type="text/javascript" src="./lib/iframeResizer.min.js"></script>
     <script type="text/javascript" src="./js/data.js"></script>
-    <script type="module" src="./js/index.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>

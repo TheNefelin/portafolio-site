@@ -1,14 +1,14 @@
 // -- Inicializar Sitio ------------------------------------------------------------
 // ---------------------------------------------------------------------------------
-import { LinksGroup, Links } from "../js/clases.js";
+// import { LinksGroup, Links } from "../js/clases.js";
 
 let arrLinksGroup = [];
 let arrLinks = [];
 
-document.addEventListener('DOMContentLoaded', () => {
+window.onload = () => {
     console.log("iniciando sitio...");
     apiTest();
-});
+}
 
 // iFrameResize({ log: true }, '#ifVideo');
 
@@ -20,7 +20,7 @@ function apiTest() {
     .then((data) => {  // Si esto pasa, el contenido carga desde la API
         getTecnologias_api();
         getLinksAndGrupo_api();
-        console.log(`${data[0].Nombre} ${data[0].Apellido} Nice: ${data[0].Alias}`);
+        console.log(`${data[0].nombre} ${data[0].apellido} Nice: ${data[0].alias}`);
     })
     .then(() => {
         arrLinksGroup = dataLinkGrp;
@@ -92,3 +92,10 @@ function renderLinksAndGroup() {
 // ---------------------------------------------------------------------------------
 // ---------------------------------------------------------------------------------
 
+function navBar01_click() {
+    const navBar01Btn = document.querySelector(".navBar01-btn");
+    navBar01Btn.classList.toggle("navBar01-btn_click");
+
+    const navBar01Links = document.querySelector(".navBar01-links"); 
+    navBar01Links.classList.toggle("navBar01-links_noOcultar");
+}
