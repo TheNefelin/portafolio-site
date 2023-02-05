@@ -270,6 +270,28 @@ header {
     border-radius: 50%;
 }
 
+.tarjeta-sp-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1rem;
+    align-items: center;
+}
+
+.tarjeta-sp-div > * {
+    margin: 0;
+}
+
+.tarjeta-sp-div div {
+    width: 100%;
+    text-align: center;
+    padding: 0.3rem;
+    background-color: var(--colorTerciario);
+    color: var(--colorText2);
+    cursor: pointer;
+}
+
 /* -- Seccion Hobbie ---------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------- */
 .seccion-hobbie {
