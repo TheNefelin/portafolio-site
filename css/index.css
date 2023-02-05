@@ -255,12 +255,15 @@ header {
 
 /* -- Seccion Proyectos ------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------- */
+.tarjeta-sp-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100% , 25rem), 1fr));
+}
 
 .tarjeta-sp {
     border: 2px solid var(--colorTerciario);
     margin: 2vw;
     display: flex;
-    position: relative;
     border-radius: 100px 10px 10px 100px;
 }
 
@@ -268,19 +271,20 @@ header {
     max-height: 20vh;
     background-color: var(--colorSecundario);
     border-radius: 50%;
+    margin: auto 0 auto 0;
 }
 
 .tarjeta-sp-div {
+    width: 100%;
+    margin: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
-    margin: 1rem;
-    align-items: center;
 }
 
 .tarjeta-sp-div > * {
     margin: 0;
+
 }
 
 .tarjeta-sp-div div {
