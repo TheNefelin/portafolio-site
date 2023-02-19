@@ -7,7 +7,8 @@ let arrLinks = [];
 
 window.onload = () => {
     console.log("iniciando sitio...");
-    apiTest();
+    getTecnologias_api();
+    getLinksAndGrupo_api();
 }
 
 // iFrameResize({ log: true }, '#ifVideo');
@@ -54,7 +55,7 @@ function getLinksAndGrupo_api() {
     .catch((err) => console.log(`Error: ${err}`));
 }
 
-// -- Render Comonentes ------------------------------------------------------------
+// -- Render Componentes -----------------------------------------------------------
 // ---------------------------------------------------------------------------------
 function renderTecnologias(dt) {
     let html = ""
