@@ -1,6 +1,7 @@
 // -- import Elements --------------------------------------------------------------
 // ---------------------------------------------------------------------------------
 import { LinksGroup, Links, Tecnologias } from "../class/ApiFetch.js";
+import { RenderTecnologias, RenderLinks } from "../components/RenderElements.js";
 
 // -- Inicializar Sitio ------------------------------------------------------------
 // ---------------------------------------------------------------------------------
@@ -9,7 +10,6 @@ let arrLinks = [];
 
 window.onload = () => {
     console.log("iniciando sitio...");
-    getTecnologias_api();
     getLinksAndGrupo_api();
 
     inicializarApi();
@@ -28,7 +28,7 @@ function inicializarApi() {
     .then(arr => {
         console.log(arr)
 
-        renderTecnologias(arr[0]);
+        console.log(RenderTecnologias(arr[0]))
         
     })
     .catch(err => console.log(`ERROR: ${err}`));
@@ -57,20 +57,7 @@ function getLinksAndGrupo_api() {
 
 // -- Render Componentes -----------------------------------------------------------
 // ---------------------------------------------------------------------------------
-function renderTecnologias(dt) {
-    let html = ""
 
-    dt.map(d => {
-        html += `
-        <div key=${d.id} class="tarjeta-st wow animated bounceInLeft">
-            <img src="${d.link}" alt="">
-            <p>${d.descripcion}</p>
-            <h1>${d.nombre}</h1>
-        </div> `;
-    });
-
-    document.querySelector(".contenedor-st").innerHTML = html;
-}
 
 function renderLinksAndGroup() {
     let html = ""
