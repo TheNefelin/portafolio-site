@@ -1,7 +1,9 @@
+// -- import Elements --------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+import { LinksGroup, Links, Tecnologias } from "../class/ApiFetch.js";
+
 // -- Inicializar Sitio ------------------------------------------------------------
 // ---------------------------------------------------------------------------------
-// import { LinksGroup, Links } from "../js/clases.js";
-
 let arrLinksGroup = [];
 let arrLinks = [];
 
@@ -9,30 +11,28 @@ window.onload = () => {
     console.log("iniciando sitio...");
     getTecnologias_api();
     getLinksAndGrupo_api();
+
+    inicializarApi();
 }
 
-// iFrameResize({ log: true }, '#ifVideo');
+function inicializarApi() {
+    const linksGrp = new LinksGroup;
+    const links = new Links;
+    const tecnologias = new Tecnologias;
 
-function apiTest() {
-    fetch("https://bsite.net/metalflap/talento-digital")
-    .then((response) => {
-        return response.json();
-    }) 
-    .then((data) => {  // Si esto pasa, el contenido carga desde la API
-        getTecnologias_api();
-        getLinksAndGrupo_api();
-        console.log(`${data[0].nombre} ${data[0].apellido} Nice: ${data[0].alias}`);
+    Promise.all([
+        tecnologias.getTecnologias().then(data => data),
+        linksGrp.getLinksGroup().then(data => data),
+        links.getLinks().then(data => data)
+    ])
+    .then(arr => {
+        console.log(arr)
+
+        renderTecnologias(arr[0]);
+        
     })
-    .then(() => {
-        arrLinksGroup = dataLinkGrp;
-        arrLinks = dataLinks;
-    })
-    .catch((error) => { // Si NO pasa, el contenido carga desde el arreglo Local
-        renderTecnologias(dataTecnologias);
-        renderLinksAndGroup();
-        console.error('Error:', error);
-    });
-};
+    .catch(err => console.log(`ERROR: ${err}`));
+}
 
 // -- Cargar Componentes Remotos ---------------------------------------------------
 // ---------------------------------------------------------------------------------

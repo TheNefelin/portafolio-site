@@ -7,8 +7,15 @@
 }
 
 @font-face {
+    /* font-family: fuenteGeneral;
+    src: url("../font/DMSerifDisplay-Regular.ttf"); */
     font-family: fuenteGeneral;
-    src: url("../font/DMSerifDisplay-Regular.ttf");
+    src: url("../font/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: fuenteCode;
+    src: url("../font/SourceCodePro-Regular.ttf");
 }
 
 @font-face {
@@ -206,6 +213,8 @@ header {
     background-color: var(--colorCaja);
     backdrop-filter: blur(5px);
     color: var(--colorText1);
+    /* letter-spacing: 2px; */
+    font-family: fuenteCode;
 }
 
 .navBar01-seccion p {
