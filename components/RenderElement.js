@@ -17,9 +17,9 @@ export function RenderTecnologias(dt) {
         p.innerText = e.descripcion;
         tarjeta.appendChild(p);
 
-        const h1 = document.createElement("h1");
-        h1.innerText = e.nombre;
-        tarjeta.appendChild(h1);
+        const h2 = document.createElement("h2");
+        h2.innerText = e.nombre;
+        tarjeta.appendChild(h2);
    
         contenedor.appendChild(tarjeta);
     });

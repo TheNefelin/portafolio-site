@@ -224,8 +224,8 @@ header {
 /* ---------------------------------------------------------------------------------------------- */
 .contenedor-st {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100% , 10rem), 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    gap: 1rem;
     justify-content: center;
     margin: 1rem;
 }
@@ -238,12 +238,11 @@ header {
     justify-content: space-between;
 }
 
-.tarjeta-st h1 {
+.tarjeta-st h2 {
     background-color: var(--colorTerciario);
     color: var(--colorText2);
     margin: 0;
     padding: 1vw;
-    height: 2rem;
 }
 
 .tarjeta-st p {
@@ -317,7 +316,7 @@ header {
 footer {
     background-color: var(--colorTerciario);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100% , 15rem), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100% , 15rem), 1fr));
 }
 
 footer div {
