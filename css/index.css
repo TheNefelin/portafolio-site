@@ -30,8 +30,8 @@
     --colorTerciario:  rgb(102, 102, 102);
     --colorText1: white;
     --colorText2: aqua;
-    --colorTextTitulos: rgb(70, 53, 53);    
-    --colorTextTituloBorde: rgb(255, 255, 255);    
+    --colorTextTitulos: rgb(70, 53, 53);
+    --colorTextTituloBorde: rgb(255, 255, 255);
     --colorCaja: rgba(0, 0, 0, 0.7);
     --colorCajaBorde: white;
 }
@@ -70,14 +70,14 @@ a:hover {
     margin: 0;
 
     color: var(--colorTextTitulos);
-    text-shadow: 
-        1px 0 var(--colorTextTituloBorde), 
-        -1px 0 var(--colorTextTituloBorde), 
-        0 1px var(--colorTextTituloBorde), 
-        0 -1px var(--colorTextTituloBorde), 
-        1px 1px var(--colorTextTituloBorde),  
-        -1px -1px var(--colorTextTituloBorde), 
-        1px -1px var(--colorTextTituloBorde), 
+    text-shadow:
+        1px 0 var(--colorTextTituloBorde),
+        -1px 0 var(--colorTextTituloBorde),
+        0 1px var(--colorTextTituloBorde),
+        0 -1px var(--colorTextTituloBorde),
+        1px 1px var(--colorTextTituloBorde),
+        -1px -1px var(--colorTextTituloBorde),
+        1px -1px var(--colorTextTituloBorde),
         -1px 1px var(--colorTextTituloBorde);
 }
 
@@ -154,7 +154,7 @@ iframe {
 
 .navBar01-links a {
     margin-left: 1rem;
-    
+
 }
 
 .navBar01-links a:hover {
@@ -224,9 +224,10 @@ header {
 /* ---------------------------------------------------------------------------------------------- */
 .contenedor-st {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100% , 15rem), 1fr));
-    gap: 2vw;
-    margin: 2rem 2rem 2rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100% , 10rem), 1fr));
+    gap: 2rem;
+    justify-content: center;
+    margin: 1rem;
 }
 
 .tarjeta-st {
@@ -250,7 +251,6 @@ header {
 }
 
 .tarjeta-st img {
-    max-width: 100%;
     background-color: white;
     object-fit: cover;
 }
@@ -266,7 +266,8 @@ header {
 /* ---------------------------------------------------------------------------------------------- */
 .tarjeta-sp-contenedor {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100% , 25rem), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100% , 25rem), 1fr));
+    justify-content: center;
 }
 
 .tarjeta-sp {
