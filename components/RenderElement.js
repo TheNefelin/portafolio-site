@@ -13,7 +13,7 @@ export function RenderTecnologias(dt) {
         img.src = e.link;
         tarjeta.appendChild(img);
 
-        const p = document.screateElement("p");
+        const p = document.createElement("p");
         p.innerText = e.descripcion;
         tarjeta.appendChild(p);
 
@@ -25,6 +25,27 @@ export function RenderTecnologias(dt) {
     });
 };
 
-export function RenderLinks() {
+export function RenderLinksAndGroup(linksGrp, links) {
+    const footer = document.querySelector("footer");
 
-}
+    linksGrp.map(grp => {
+        const div = document.createElement("div");
+
+        const p = document.createElement("p");
+        p.innerText = grp.nombre
+        div.appendChild(p);
+
+        const linksPorGrp = links.filter(e => e.idLinkGrupo == grp.id)
+
+        linksPorGrp.map(d => {
+            const a = document.createElement("a");
+            a.target = "_blank";
+            a.href = d.link;
+            a.innerText = d.nombre;
+
+            div.appendChild(a);
+        });
+
+        footer.appendChild(div);
+    });
+};
