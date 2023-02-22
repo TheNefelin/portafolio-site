@@ -257,7 +257,7 @@ header {
 /* -- Seccion-Relleno --------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------- */
 .seccion-relleno {
-    height: 100px;
+    height: 20vh;
     background-image: url("../img/fondo_01.jpg");
 }
 
@@ -265,7 +265,7 @@ header {
 /* ---------------------------------------------------------------------------------------------- */
 .tarjeta-sp-contenedor {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100% , 25rem), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100% , 20rem), 1fr));
     justify-content: center;
 }
 
